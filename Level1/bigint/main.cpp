@@ -7,7 +7,7 @@ int main() {
 	const bigint a(42);
 	bigint b("21"), c, d(1337), e(d);
 
-	std::cout << "a = " << a << std::endl; // a = 42
+	std::cout << "a = " << a << std::endl; // a = "42"
 	std::cout << "b = " << b << std::endl; // b = 21
 	std::cout << "c = " << c << std::endl; // c = 0 (Supposant que le constructeur par défaut initialise à 0)
 	std::cout << "d = " << d << std::endl; // d = 1337
@@ -15,12 +15,12 @@ int main() {
 
 	std::cout << "a + b = " << a + b << std::endl; // a + b = 63
 
-	std::cout << "(c += a) = " << (c += a) << std::endl; // c = 42, donc (c += a) = 42
+	std::cout << "(c += a) = " << (c += a) << std::endl; // a = 42, donc (c += a) = 42
 
 	std::cout << "b = " << b << std::endl; // b = 21
 	std::cout << "++b = " << ++b << std::endl; // ++b = 22
 	std::cout << "b++ = " << b++ << std::endl; // b++ = 22 (après cette ligne b = 23)
-	std::cout << "(b << 10) + 42 = " << ((b << 10) + 42) << std::endl; // (b << 10) + 42 = (23 << 10) + 42 = 23566
+	std::cout << "(b << 10) + 42 = " << ((b << 10) + 42) << std::endl; // (b << 10) + 42 = (23 << 10) + 42 = 23000042
 	
 	
 	std::cout << "(d <<= 4) = " << (d <<= 4) << std::endl; // d <<= 4 = 1337 * 16 = 21392
